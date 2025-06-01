@@ -34,7 +34,7 @@ mvn clean package
 After building, you can run the game using:
 
 ```bash
-java -jar target/tictactoe-1.0-SNAPSHOT.jar
+mvn clean javafx:run
 ```
 
 ## Gameplay Instructions
