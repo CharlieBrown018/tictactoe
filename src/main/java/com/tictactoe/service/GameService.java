@@ -73,16 +73,17 @@ public class GameService {
     public boolean makeMove(int row, int col) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || !board[row][col].isEmpty() || isGameOver) {
             return false;
-            }
-            String symbol = getCurrentPlayerSymbol();
-            board[row][col] = symbol;
-            moveCount++;
-            moves.add(String.format("%d,%d,%s", row, col, symbol));
-            // Remove this position from cleared positions if it was previously cleared
-            clearedPositions.remove(row + "," + col);
-            if (checkWinForSymbol(symbol)) {
+        }
+        String symbol = getCurrentPlayerSymbol();
+        board[row][col] = symbol;
+        moveCount++;
+        moves.add(String.format("%d,%d,%s", row, col, symbol));
+        // Remove this position from cleared positions if it was previously cleared
+        clearedPositions.remove(row + "," + col);
+        if (checkWinForSymbol(symbol)) {
             isGameOver = true;
-            // Since getCurrentPlayerSymbol() returns X for even moveCount and O for odd moveCount
+            // Since getCurrentPlayerSymbol() returns X for even moveCount and O for odd
+            // moveCount
             // and moveCount has been incremented, we need to check the previous state
             // If moveCount is now odd, X just played (player1)
             // If moveCount is now even, O just played (player2)
