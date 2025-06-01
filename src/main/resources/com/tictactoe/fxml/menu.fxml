@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.tictactoe.controller.MainMenuController"
+         stylesheets="@../../../styles/dark-theme.css"
+         styleClass="root">
+
+    <!-- Animated Background -->
+    <Pane styleClass="animated-background">
+        <Circle fx:id="circle1" styleClass="background-shape" radius="20"/>
+        <Circle fx:id="circle2" styleClass="background-shape" radius="15"/>
+        <Polygon fx:id="triangle1" styleClass="background-shape"/>
+        <Rectangle fx:id="rectangle1" styleClass="background-shape" width="30" height="30"/>
+    </Pane>
+
+    <!-- Menu Content -->
+    <VBox alignment="CENTER" spacing="20">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Tic Tac Toe" styleClass="game-title"/>
+
+        <VBox spacing="15" alignment="CENTER" styleClass="menu-buttons">
+            <Button text="New Game" onAction="#handleNewGame" styleClass="menu-button"/>
+            <Button text="Leaderboard" onAction="#handleLeaderboard" styleClass="menu-button"/>
+            <Button text="Quit" onAction="#handleQuit" styleClass="menu-button"/>
+        </VBox>
+
+        <Text fx:id="versionText" text="v1.0.0" styleClass="version-text"/>
+    </VBox>
+</StackPane> 

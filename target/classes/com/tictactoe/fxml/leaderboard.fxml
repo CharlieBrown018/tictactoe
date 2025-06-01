@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tictactoe.controller.LeaderboardController"
+      stylesheets="@../../../styles/dark-theme.css"
+      styleClass="root">
+
+    <!-- Animated Background -->
+    <Pane styleClass="animated-background">
+        <Circle fx:id="circle1" styleClass="background-shape" radius="20"/>
+        <Circle fx:id="circle2" styleClass="background-shape" radius="15"/>
+        <Polygon fx:id="triangle1" styleClass="background-shape"/>
+        <Rectangle fx:id="rectangle1" styleClass="background-shape" width="30" height="30"/>
+    </Pane>
+
+    <VBox spacing="20" alignment="CENTER">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Leaderboard" styleClass="leaderboard-title"/>
+
+        <TableView fx:id="leaderboardTable" VBox.vgrow="ALWAYS" styleClass="leaderboard-table">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Player" prefWidth="150" styleClass="table-column"/>
+                <TableColumn fx:id="winsColumn" text="Wins" prefWidth="100" styleClass="table-column"/>
+                <TableColumn fx:id="lossesColumn" text="Losses" prefWidth="100" styleClass="table-column"/>
+                <TableColumn fx:id="drawsColumn" text="Draws" prefWidth="100" styleClass="table-column"/>
+                <TableColumn fx:id="winRateColumn" text="Win Rate %" prefWidth="100" styleClass="table-column"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Refresh" onAction="#handleRefresh" styleClass="button, primary-button"/>
+            <Button text="Back to Menu" onAction="#handleBack" styleClass="button, menu-button"/>
+        </HBox>
+    </VBox>
+</StackPane> 
